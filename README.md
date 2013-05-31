@@ -33,9 +33,9 @@ $app->register(
     new PdoServiceProvider(),
     array(
         'pdo.dsn' => 'pdo_mysql:dbname=test;host=127.0.0.1',
-        'pdo.username' => 'username',
-        'pdo.password' => 'password',
-        'pdo.options' => array(
+        'pdo.username' => 'username', // optional
+        'pdo.password' => 'password', // optional
+        'pdo.options' => array( // optional
             PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'UTF8'"
         )
     )
