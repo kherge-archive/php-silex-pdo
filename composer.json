@@ -1,0 +1,39 @@
+{
+    "name": "herrera-io/silex-pdo",
+    "description": "A simple PDO service provider.",
+    "keywords": ["silex", "pdo", "service", "provider"],
+    "homepage": "http://herrera-io.github.com/php-silex-pdo",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kevin Herrera",
+            "email": "kevin@herrera.io",
+            "homepage": "http://kevin.herrera.io"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/herrera-io/php-silex-pdo/issues"
+    },
+    "require": {
+        "php": ">=5.3.3",
+        "silex/silex": "1.*"
+    },
+    "require-dev": {
+        "herrera-io/phpunit-test-case": "1.*",
+        "phpunit/phpunit": "3.7.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Herrera\\Pdo": "src/lib"
+        }
+    },
+    "config": {
+        "bin-dir": "bin",
+        "vendor-dir": "src/vendors"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
