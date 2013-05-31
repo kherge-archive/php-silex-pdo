@@ -41,24 +41,7 @@ $app->register(
     )
 );
 
-use Herrera\Cli\Application;
-
-$app = new Application('MyApp', '1.2.3');
-
-$app->add('myCommand', function ($input, $output) use ($app) {
-    $output->writeln('Hello, ' . $input->getArgument('name') . '!');
-
-    return 123;
-})->addArgument('name');
-
-$app->run();
-```
-
-Running it:
-
-```sh
-$ php myApp.php myCommand Guest
-Hello, Guest!
+$pdo = $app['pdo'];
 ```
 
 [Build Status]: https://travis-ci.org/herrera-io/php-silex-pdo.png?branch=master
