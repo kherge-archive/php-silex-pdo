@@ -2,7 +2,7 @@
     "name": "herrera-io/silex-pdo",
     "description": "A simple PDO service provider.",
     "keywords": ["silex", "pdo", "service", "provider"],
-    "homepage": "http://herrera-io.github.com/php-silex-pdo",
+    "homepage": "http://github.com/herrera-io/php-silex-pdo",
     "license": "MIT",
     "authors": [
         {
