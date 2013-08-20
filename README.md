@@ -23,8 +23,6 @@ Usage
 -----
 
 ```php
-<?php
-
 use Herrera\Pdo\PdoServiceProvider;
 use Silex\Application;
 
@@ -43,5 +41,19 @@ $app->register(
 
 $pdo = $app['pdo'];
 ```
+
+You can also use the `PdoTrat` to add a `prepare` method to your application:
+
+```php
+use Herrera\Pdo\PdoTrait;
+use Silex\Application;
+
+class MyApp extends Application
+{
+    use PdoTrait;
+}
+```
+
+> You will still need to register the service provider.
 
 [Build Status]: https://travis-ci.org/herrera-io/php-silex-pdo.png?branch=master
