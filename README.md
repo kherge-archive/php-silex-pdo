@@ -42,7 +42,7 @@ $app->register(
 $pdo = $app['pdo'];
 ```
 
-You can also use the `PdoTrat` to add a `prepare` method to your application:
+You can also use the `PdoTrait` to add a `prepare` method to your application:
 
 ```php
 use Herrera\Pdo\PdoTrait;
@@ -56,4 +56,8 @@ class MyApp extends Application
 
 > You will still need to register the service provider.
 
+If debugging is enabled and Monolog is available, a [logging version][]
+of `PDO` will be used to log queries and their execution time.
+
 [Build Status]: https://travis-ci.org/herrera-io/php-silex-pdo.png?branch=master
+[logging version]: https://github.com/herrera-io/php-pdo-log

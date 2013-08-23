@@ -4,7 +4,9 @@ namespace Herrera\Pdo\Tests;
 
 use Herrera\Pdo\PdoServiceProvider;
 use Herrera\PHPUnit\TestCase;
+use Monolog\Logger;
 use Silex\Application;
+use Silex\Provider\MonologServiceProvider;
 
 class PdoServiceProviderTest extends TestCase
 {
@@ -64,6 +66,34 @@ class PdoServiceProviderTest extends TestCase
         );
 
         $this->assertTrue($this->app['pdo']);
+    }
+
+    /**
+     * @depends testRegister
+     */
+    public function testPdoDebug()
+    {
+        $file = $this->createFile();
+
+        $this->app['debug'] = true;
+        $this->app->register(
+            new MonologServiceProvider(),
+            array(
+                'monolog.level' => Logger::DEBUG,
+                'monolog.logfile' => $file,
+            )
+        );
+
+        $this->app['pdo.dsn'] = 'sqlite::memory:';
+
+        $this->provider->register($this->app);
+
+        $this->app['pdo']->exec('CREATE TABLE test(id INTEGER PRIMARY KEY)');
+
+        $this->assertContains(
+            'CREATE TABLE test(id INTEGER PRIMARY KEY)',
+            file_get_contents($file)
+        );
     }
 
     protected function setUp()

@@ -19,8 +19,10 @@
         "silex/silex": "1.*"
     },
     "require-dev": {
-        "herrera-io/phpunit-test-case": "1.*",
-        "phpunit/phpunit": "3.7.*"
+        "herrera-io/pdo-log": "~1.0",
+        "herrera-io/phpunit-test-case": "~1.0",
+        "monolog/monolog": "~1.1",
+        "phpunit/phpunit": "~3.7"
     },
     "autoload": {
         "psr-0": {
