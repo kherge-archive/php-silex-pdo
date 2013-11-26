@@ -16,10 +16,10 @@
     },
     "require": {
         "php": ">=5.3.3",
-        "silex/silex": "1.*"
+        "silex/silex": "1.*",
+        "herrera-io/pdo-log": "~1.0"
     },
     "require-dev": {
-        "herrera-io/pdo-log": "~1.0",
         "herrera-io/phpunit-test-case": "~1.0",
         "monolog/monolog": "~1.1",
         "phpunit/phpunit": "~3.7"
